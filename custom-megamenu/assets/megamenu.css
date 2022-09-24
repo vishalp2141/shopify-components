@@ -1,0 +1,311 @@
+/* all css */
+.megamenu-a {
+    padding: 0;
+}
+.megamenu-a .site-nav li a {
+    color: #000000;
+    font-size: 16px;
+    line-height: 25px;
+    transition: all 500ms;
+}
+.megamenu-a ul {
+    list-style: none;
+}
+.megamenu-a img {
+    width: 100%;
+}
+.megamenu-a .nav-bar-mobile .nav-bar .site-nav li a {
+    position: relative;
+}
+.megamenu-a .site-nav-dropdown {
+    background: #fff;
+    text-align: left;
+    visibility: hidden;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+    padding: 0;
+    width: 98%;
+}
+.megamenu-a .site-nav-dropdown .menu__moblie {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 70px;
+}
+.megamenu-a .dropdown li {
+    padding: 10px 0;
+}
+.megamenu-a .dropdown li a {
+    color: #000000;
+    transition: all 500ms;
+}
+.megamenu-a .desktop-megamenu .site-nav li.mega-menu:hover .site-nav-dropdown,
+.site-nav li.dropdown:hover .site-nav-dropdown,
+.site-nav li.mega-menu:hover .site-nav-dropdown {
+    overflow: visible;
+    visibility: visible;
+    -webkit-transform: scaleY(1);
+    -khtml-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.megamenu-a .site-nav-dropdown .col-lg-3 .inner {
+    width: 33.3%;
+    display: inline-block;
+    vertical-align: top;
+}
+.megamenu-a .site-nav {
+    padding: 0 15px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.megamenu-a .site-nav-dropdown .parent-mega-menu {
+    display: flex;
+}
+.megamenu-a .site-nav-dropdown .container-fluid {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 15%);
+    border-radius: 0;
+    float: left;
+}
+.megamenu-a .parent-mega-menu .dropdown {
+    padding: 0;
+}
+.megamenu-a .site-nav li.dropdown a .dropdown__span:before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 10px;
+  right: -18px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid #27251f;
+  border-top: 1px solid #27251f;
+  transform: rotate(-225deg);
+  margin-right: 0.5em;
+  margin-left: 1em;
+}
+.megamenu-a .parent-mega-menu a span:before {
+    content: none !important;
+}
+.site-nav-dropdown .container-fluid .parent-mega-menu .col-lg-4 a:before {
+    content: none !important;
+}
+
+/*  For A Style Five  */
+
+.site-nav-dropdown .col-1 .inner {
+    width: 33.3%;
+}
+.site-nav-dropdown .col-1 {
+    width: 60%;
+    max-width: unset;
+    flex: unset;
+}
+.site-nav-dropdown .col-2 {
+    width: 40%;
+    max-width: unset;
+    flex: unset;
+    padding: 0;
+}
+.site-nav-dropdown .style_5 .inner {
+    width: 25%;
+    max-width: unset;
+    flex: unset;
+    padding: 0 10px;
+}
+.container-fluid.style_5 {
+    display: unset !important;
+}
+.site-nav-dropdown .col-wide .bottom_left {
+    width: 49%;
+    margin-right: 2%;
+}
+.site-nav-dropdown .col-wide .bottom_right {
+    margin-right: 0;
+    width: 49%;
+}
+.site-nav a {
+    display: block;
+    margin-right: 25px;
+    text-decoration: none;
+}
+.site-nav-dropdown .col-wide {
+    width: 100%;
+    padding: 0 0;
+}
+.site-nav-dropdown .style_5 .col-1 {
+    width: 100%;
+}
+.site-nav-dropdown .col-1 .inner .dropdown {
+    margin-bottom: 30px;
+}
+.site-nav-dropdown_inner .dropdown{
+  position: unset;
+}
+
+
+/* megamenu block one */
+
+.custom-megamenu{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin : 0 auto;
+  width:98%;
+  padding: 20px 0;
+}
+.custom-megamenu .row{
+  width:100%;
+}
+.custom-megamenu .qt-menu__inner ul{
+  list-style:none;
+}
+.custom-megamenu .qt-menu__inner{
+  display: flex;
+  justify-content: center;
+  text-align:left;
+}
+.custom-megamenu .qt-menu__inner ul li a{
+  font-size: 14px;
+  line-height: 20px;
+  color: #212121;
+  text-decoration: none;
+  transition:0.5s all;
+}
+.custom-megamenu .qt-menu__inner ul li a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-megamenu .qt-menu__inner{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .custom-megamenu .qt-menu__inner ul{
+    margin-bottom:16px;
+  }
+  .megamenu-a .site-nav-dropdown .container-fluid{
+    padding: 20px 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .custom-megamenu .qt-menu__inner ul li a{
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+
+/* megamenu two */
+
+.megamenu-two{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin : 0 auto;
+  width:98%;
+  padding: 20px 0;
+}
+.megamenu-two .row{
+  width:100%;
+}
+.megamenu-two .qt-menu__two ul{
+  list-style:none;
+}
+.megamenu-two .qt-menu__two{
+  display: flex;
+  justify-content: flex-start;
+  text-align:left;
+}
+.megamenu-two .qt-menu__two ul li a{
+  font-size: 14px;
+  line-height: 20px;
+  color: #212121;
+  text-decoration: none;
+  transition:0.5s all;
+}
+.megamenu-two .qt-menu__two ul li a:hover{
+  text-decoration: underline;
+}
+.megamenu-two .qt-menu__two-img{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  padding: 0 20px;
+}
+.megamenu-two .qt-menu__two-img img{
+  width:100%;
+}
+
+@media screen and (max-width: 768px) {
+  .megamenu-two .qt-menu__two{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .megamenu-two .qt-menu__two ul{
+    margin-bottom:16px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .megamenu-two .qt-menu__two ul li a{
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+
+/* megamenu block three */
+
+.mega-three{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin : 0 auto;
+  width:98%;
+  padding:20px;
+}
+.mega-three .row{
+  width:100%;
+}
+.mega-three .qt-mega-three{
+  display: flex;
+  justify-content: flex-start;
+  text-align:left;
+}
+.mega-three .qt-mega-three-img{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+.mega-three .qt-mega-three-img img{
+  width:100%;
+}
+
+@media screen and (max-width: 768px) {
+  .mega-three .qt-mega-three{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom:16px;
+  }
+}

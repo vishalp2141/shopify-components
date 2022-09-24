@@ -1,0 +1,388 @@
+<style>
+  .faq-b{
+    background-color:#F2F2F2;
+    padding: 60px 0;
+    padding-bottom:100px;
+  }
+  .faq-b .faq-b__main-title {
+    width: 100%;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  .faq-b .faq-b__title h2 {
+    color: #000;
+    margin: 0;
+    font-weight:700 !important;
+  }
+  .faq-b .faq-b__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .faq-b .faq-b__count {
+    margin-right: 1px;
+    background: #ededed;
+    min-width: 70px;
+    height: 100%;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 4px 0 0 4px;
+  }
+  .faq-b .faq-b__count span {
+    font-weight: 600;
+    font-size: 18px;
+    color: #222222;
+  }
+  /* faq */
+  .faq-b .faq-b__tem-inner {
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: all 500ms;
+    margin: 0;
+    border-radius: 0;
+    border-top:1px solid #27251F;
+  }
+
+  .faq-b p.custom-accordion {
+    padding: 25px 0px;
+    padding-right: 60px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: left;
+    color: #000000;
+    border-radius: 0;
+    margin: 0;
+    background: transparent;
+  }
+  .faq-b p.custom-accordion.active,
+  p.accordion:hover {
+    color: #535353;
+    background: unset;
+  }
+  
+  .faq-b p.custom-accordion:after {
+    position: absolute;
+    content: "";
+    display: inline-block;	
+    width: 8px;
+    height: 8px;
+    top: 30px;
+    right: 15px;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    transform: rotate(135deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+  }
+
+  .faq-b p.custom-accordion.active:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    top: 30px;
+    right: 15px;
+    border-right: 2px solid black;
+    border-top:2px solid black;
+    transform: rotate(-45deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+  }
+  .faq-b div.custom-panel {
+    background-color: white;
+    overflow: hidden;
+    display: none;
+    border-radius: 0;
+    background-color: unset;
+  }
+  .faq-b div.custom-panel p {
+    background: transparent;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    color: #191919;
+    margin-top:0;
+    margin-bottom:20px;
+  }
+  
+  .faq-b div.custom-panel.show p {
+    padding: 0 0 20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .accordion .accordion-item {
+    border-top: 1px solid #27251F;
+  }
+
+  .faq-b-content:last-child .accordion-item {
+    border-bottom:1px solid #27251F;
+  }
+
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 18px 0;
+    color: #27251F;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    background: none;
+    outline: none;
+    transition: all 500ms;
+  }
+  .accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+  }
+  .accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    border: 1px solid #03b5d2;
+  }
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 10px;
+    right: 0px;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #27251F;
+    border-top:2px solid #27251F;
+    transform: rotate(-225deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+  }
+
+  .accordion button[aria-expanded='true'] .icon::after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 10px;
+    right: 0px;
+   width: 8px;
+    height: 8px;
+    border-right: 2px solid #27251F;
+    border-top:2px solid #27251F;
+    transform: rotate(-45deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+  }
+  .accordion button[aria-expanded='true'] + .accordion-content {
+    padding-bottom: 10px;
+    margin-top: -18px;
+    opacity: 1;
+    max-height: 10em;
+    transition: all 200ms linear;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+  }
+
+  .accordion .accordion-content p {
+    color: #27251F;
+    font-weight: 500 !important;
+    font-size: 16px;
+    width: 90%;
+  }
+  @media screen and (min-width: 1400px) and (max-width: 2100px) {
+    .faq-b{
+      padding:120px 0;
+      padding-bottom:150px;
+    }
+  }
+  @media screen and (max-width: 790px) {
+    .faq-b{
+      padding:40px 0;
+    }
+
+    .faq-b__main-title{
+      padding-bottom: 30px;
+    }
+    
+    .accordion button[aria-expanded='true'] + .accordion-content{
+      padding-bottom: 5px;
+      max-height: 29em;
+    }
+  }
+  @media screen and (max-width: 575px) {
+
+    .faq-b .faq-b__main-tab ul.faq-b-tabs li {
+      padding: 10px 10px 0;
+    }
+    .faq-b p.custom-accordion {
+      font-size: 13px;
+      line-height: 22px;
+      padding: 10px 0px;
+    }
+
+    .accordion .accordion-content p {
+      width: 100%;
+    }
+    
+    .accordion button {
+      padding: 14px 0;
+      width: 94%;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .accordion button .icon {
+      top: 10px;
+      right: -15px;
+    }
+
+    .accordion button .icon::after{
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid #27251F;
+      border-top: 2px solid #27251F;
+    }
+
+    .accordion button[aria-expanded='true'] .icon::after{
+      top: 15px;
+      width: 7px;
+      height: 7px;
+      border-right: 2px solid #27251F;
+      border-top: 2px solid #27251F;
+    }
+    
+    .faq-b .faq-b__main-title{
+      padding-bottom: 25px;
+    }
+
+
+  }
+
+</style>
+
+
+<section id="custom-faq-b" class="section-separator">
+   <div class="banner-container">
+  <div class="faq-b">
+    <div class="container">
+      <div class="faq-b__inner">
+        <div class="row">
+          <div class="faq-b__main-title">
+            <div class="faq-b__title"><h2>{{ section.settings.faq_title }}</h2></div>
+          </div>
+
+
+          <div class="faq-b__main-tab">
+
+            <div class="faq-b__tab-content">
+              <div id="tab-b" class="faq-b-tab-content current">
+
+                <div class="accordion">
+                  <div class="row m-0 faqs-row">
+                    {% for block in section.blocks %}
+                    <div class="col-lg-10 col-12 mx-auto faq-b-content">
+                      <div class="accordion-item">
+                        <button id="accordion-button-{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% endif %}{% unless forloop.first %}false{% endunless %}">
+                          <span class="accordion-title">{{ block.settings.faq_question }}</span>
+                          <span class="icon" aria-hidden="true"></span></button>
+                        <div class="accordion-content">
+                          <p>{{ block.settings.faq_answer }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+   "name":"QT FAQ",
+   "settings":[
+      {
+         "type":"text",
+         "id":"faq_title",
+         "label":"Title",
+         "default":"FAQs"
+      }
+   ],
+   "blocks":[
+      {
+         "type":"quote",
+         "name":"Question",
+         "settings":[
+            {
+               "type":"text",
+               "id":"faq_question",
+               "label":"Question Name",
+               "default":"Lorem ipsum dolor sit amet ?"
+            },
+            {
+               "type":"richtext",
+               "id":"faq_answer",
+               "label":"Answer of Question",
+               "default":"<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>"
+            }
+         ]
+      }
+   ],
+   "presets":[
+      {
+         "name":"QT-FAQ",
+         "category":"FAQ"
+      }
+   ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+const items = document.querySelectorAll(".faq-b__main-tab .accordion button");
+
+  function toggleAccordion() {
+    const itemToggle = this.getAttribute('aria-expanded');
+
+    for (i = 0; i < items.length; i++) {
+      items[i].setAttribute('aria-expanded', 'false');
+    }
+
+    if (itemToggle == 'false') {
+      this.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  items.forEach(item => item.addEventListener('click', toggleAccordion));
+
+{% endjavascript %}

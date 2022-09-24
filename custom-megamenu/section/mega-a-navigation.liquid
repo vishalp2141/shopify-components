@@ -1,0 +1,159 @@
+
+<section id="megamenu-a" class="section-separator">
+  <div class="megamenu-a">
+    <div class="nav-bar-mobile">
+      <nav class="nav-bar" role="navigation">
+        <div class="site-nav-dropdown_inner">
+          {% include 'maga-a-sitenav' %}
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name":"Navigation",
+    "max_blocks":1,
+    "settings":[
+        {
+            "type":"link_list",
+            "id":"new_menu",
+            "label":"Menu Items"
+        },
+        {
+            "type":"checkbox",
+            "id":"display_megamenu",
+            "label":"Display Mega Menu?",
+            "default":true
+        }
+    ],
+    "blocks":[
+        {
+            "type":"block-1",
+            "name":"Block 1",
+            "settings":[
+                {
+                    "type":"text",
+                    "id":"title",
+                    "label":"Megamenu-one",
+                    "default":"Megamenu-one"
+                },
+                {
+                    "type":"text",
+                    "id":"megamenu_items_1",
+                    "label":"Mega Menu Items for Style 1",
+                    "default":"Catalog"
+                },
+                {
+                    "type":"link_list",
+                    "id":"first_menu",
+                    "label":"First Menu"
+                },
+                {
+                    "type":"link_list",
+                    "id":"second_menu",
+                    "label":"Second Menu"
+                },
+                {
+                    "type":"link_list",
+                    "id":"menu_three",
+                    "label":"Menu Three"
+                }
+            ]
+        },
+        {
+            "type":"block-2",
+            "name":"Block 2",
+            "settings":[
+                {
+                    "type":"text",
+                    "id":"title",
+                    "label":"Megamenu-two",
+                    "default":"Megamenu-two"
+                },
+                {
+                    "type":"text",
+                    "id":"megamenu_items_1",
+                    "label":"Mega Menu Items for Style 2",
+                    "default":"Catalog"
+                },
+                {
+                    "type":"link_list",
+                    "id":"first_menu",
+                    "label":"First Menu"
+                },
+                {
+                    "type":"link_list",
+                    "id":"second_menu",
+                    "label":"Second Menu"
+                },
+                {
+                    "type":"text",
+                    "id":"image_link",
+                    "label":"Link for Image"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"image_select",
+                    "label":"Menu Three"
+                }
+            ]
+        },
+        {
+            "type":"block-3",
+            "name":"Block 3",
+            "settings":[
+                {
+                    "type":"text",
+                    "id":"title",
+                    "label":"Megamenu-three",
+                    "default":"Megamenu-three"
+                },
+                {
+                    "type":"text",
+                    "id":"megamenu_items_1",
+                    "label":"Mega Menu Items for Style 3",
+                    "default":"Catalog"
+                },
+                {
+                    "type":"text",
+                    "id":"first_image_link",
+                    "label":"Link for Image"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"first_image_select",
+                    "label":"Menu Three"
+                },
+                {
+                    "type":"text",
+                    "id":"second_image_link",
+                    "label":"Link for Image"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"second_image_select",
+                    "label":"Menu Three"
+                },
+                {
+                    "type":"text",
+                    "id":"three_image_link",
+                    "label":"Link for Image"
+                },
+                {
+                    "type":"image_picker",
+                    "id":"three_image_select",
+                    "label":"Menu Three"
+                }
+            ]
+        }
+    ],
+    "presets":[
+        {
+            "name":"Megamenu A",
+            "category":"custom"
+        }
+    ]
+}
+{% endschema %}

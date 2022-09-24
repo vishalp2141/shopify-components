@@ -1,0 +1,10 @@
+Add drawer section and then add drawer cs and js
+
+Now goto header section and add the code to cart link
+
+data-drawer-trigger aria-controls="drawer-name" aria-expanded="false"
+
+like this : 
+<a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link link--text focus-inset {% if template == 'cart' %}d-none{%- endif -%}" id="cart-icon-bubble" data-drawer-trigger aria-controls="drawer-name" aria-expanded="false">
+      ....
+</a>

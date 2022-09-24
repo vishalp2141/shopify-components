@@ -1,0 +1,119 @@
+<section class="drawer" id="drawer-name" data-drawer-target>
+  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__wrapper">
+    
+    <div class="drawer__header">
+      <div class="drawer__title">{{ 'sections.cart.title' | t }}
+         <input type="hidden" value="{{ cart.currency.symbol }}" name="custom_currency" id="custom_currency" >
+      </div>
+     
+      <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
+    </div>
+    
+    <div class="drawer__body">
+      <div class="drawer__content" id="cart__drawer">
+        
+        {% if cart == empty %}
+        <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
+        {% endif %}
+        
+        
+        {%- for item in cart.items -%}
+        <div id="CartItem-{{ item.index | plus: 1 }}" class="cart__drawer_items">
+         
+          <div class="cart__drawer_items-img">
+             {% if item.image %}
+            <img class="cart-item__image" src="{{ item.image | img_url: 'small' }}" alt="{{ item.image.alt | escape }}" loading="lazy" style="width:100%" >
+            {% endif %}
+          </div>
+          
+
+          <div class="cart__drawer_items-text">
+            <div class="cart__drawer_items-text-name">
+              <p class="cart-all__text">{{ item.product.title | escape }}</p>
+            </div>
+
+            <div class="cart__drawer_items-price-quantity">
+              <p> Price :{{ item.final_price | money }} 
+                x
+                <input class="quantity__input"
+                        type="number"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="0"
+                        aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                        id="Quantity-{{ item.index | plus: 1 }}"
+                        data-index="{{ item.index | plus: 1 }}"
+                     readonly >
+              </p>
+              
+            </div>
+
+          </div>
+          <div class="sidebar-remove-product-button" id="removeproduct">
+<!--             <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
+              <a href="{{ item.url_to_remove }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>          
+              </a>
+            </cart-remove-button> -->
+          <a href="javascript:void(0)" class="cust-remove-item" data-id="{{ item.id }}" rel="{{ item.id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </a>
+            
+        </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="drawer__center-recent">
+        {% include 'recently-viewed' %}
+      </div>
+
+
+      <div class="drawer__footer">
+        <div class="drawer-subtotal">
+          <span id="cart__total_price">{{ 'sections.cart.subtotal' | t }} : </span> <span class="cart-drawer__subtotals totals__subtotal-value"> {{ cart.total_price | money_without_trailing_zeros  }} </span>    
+        </div>
+
+        <div class="drawer-to-cart">
+          <a href="{{ routes.cart_url }}" class="drawer-checkout-cart-btn drawer-checkout-btn">Go to Cart</a>
+
+          <form action="{{ routes.cart_url }}" method="post" id="cart">
+            <button type="submit" id="checkout" class="drawer-checkout-check-btn drawer-checkout-btn" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+              {{ 'sections.cart.checkout' | t }}
+            </button>
+          </form>
+
+
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  
+ 
+  fetch('/cart.js')
+  .then((resp) => resp.json())
+  .then((data) => {
+    
+    if(data.items.length > 0) {
+        data.items.forEach(function(product, index) { 
+//           document.getElementById('drawer_cart_items').innerHTML = '<img src="' + product.featured_image.url + '" alt="' + product.featured_image.alt + '"><h5>' + product.title + '</h5><p>' + product.quantity + ' x ' + '</p>';
+      	});
+    } else {
+//       document.getElementById('drawer_cart_items').innerHTML = '<p>Cart is empty</p>';
+//       document.getElementById('drawer_checkout_btn').setAttribute('disabled', 'disabled');
+//       document.getElementById('drawer_checkout_btn').style.pointerEvents = 'none';
+    }
+    
+//     document.getElementById('drawer_total_amount').innerHTML = theme.Currency.formatMoney(data.total_price, theme.moneyFormat);
+    
+  });
+  
+
+</script>

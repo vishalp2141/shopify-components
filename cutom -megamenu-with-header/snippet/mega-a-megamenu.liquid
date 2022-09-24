@@ -1,0 +1,129 @@
+<div class="site-nav-dropdown">     
+  <div class="container-fluid   {{ block_style }}"> 
+
+    {% for block in section.blocks %}
+    {% if block.type == 'block-1' %}
+
+      <div class="custom-megamenu">
+          <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+              <div class="qt-menu__inner">
+                <ul>
+                  {%- for link in block.settings.first_menu.links -%}
+                  <li class="footer__main-sub"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="qt-menu__inner">
+                <ul>
+                  {%- for link in block.settings.second_menu.links -%}
+                  <li class="footer__main-sub"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+              <div class="qt-menu__inner">
+                <ul>
+                  {%- for link in block.settings.menu_three.links -%}
+                  <li class="footer__main-sub"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+    {% elsif block.type == 'block-2' %}
+
+
+      <div class="megamenu-two">
+          <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-menu__two">
+                <ul>
+                  {%- for link in block.settings.first_menu.links -%}
+                  <li class="footer__main-sub"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-menu__two">
+                <ul>
+                  {%- for link in block.settings.second_menu.links -%}
+                  <li class="footer__main-sub"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-menu__two">
+                <div class="qt-menu__two-img">
+                  <a href=" {{ block.settings.image_link }}">
+                    <img src="{{ block.settings.image_select | img_url: 'grande' }}" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+    {% elsif block.type == 'block-3' %}
+
+
+      <div class="mega-three">
+          <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-mega-three">
+                <div class="qt-mega-three-img">
+                  <a href=" {{ block.settings.first_image_link }}">
+                    <img src="{{ block.settings.first_image_select | img_url: 'grande' }}" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-mega-three">
+                <div class="qt-mega-three-img">
+                  <a href=" {{ block.settings.second_image_link }}">
+                    <img src="{{ block.settings.second_image_select | img_url: 'grande' }}" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+              <div class="qt-mega-three">
+                <div class="qt-mega-three-img">
+                  <a href=" {{ block.settings.three_image_link }}">
+                    <img src="{{ block.settings.three_image_select | img_url: 'grande' }}" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    {% endif %}
+    {% endfor %}
+
+  </div>
+</div>
+
+
